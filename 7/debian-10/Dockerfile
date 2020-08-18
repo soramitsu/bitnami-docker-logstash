@@ -22,6 +22,8 @@ ENV BITNAMI_APP_NAME="logstash" \
     BITNAMI_IMAGE_VERSION="7.8.1-debian-10-r5" \
     PATH="/opt/bitnami/java/bin:/opt/bitnami/logstash/bin:/opt/bitnami/common/bin:$PATH"
 
+RUN logstash-plugin install logstash-output-influxdb
+
 EXPOSE 8080
 
 WORKDIR /opt/bitnami/logstash
